@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\BankDetailController;
+use App\Http\Controllers\API\FirebaseController;
 use App\Http\Controllers\API\WalletController;
 use App\Models\MainAppStatus;
 use Illuminate\Http\Request;
@@ -31,3 +32,5 @@ Route::middleware('auth:customer')->group(function () {
         return response()->json($data, 200);
     });
 });
+
+Route::post('get-data',[FirebaseController::class,'index']);
